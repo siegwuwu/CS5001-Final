@@ -13,11 +13,21 @@ The final project focuses on building a stock analysis application. It uses the 
 ## Key Features
 Highlight some key features of this project that you want to show off/talk about/focus on. 
 
-The key feature of this application is the calculation of simple moving average (SMA). SMA is the average of the prices of the x days before the current day with the x days being specified by the user based. By comparing the current day price with the SMA, one can understand if a datum is high, low, or equal compared with the SMA. The strategy is to buy a stock on the day when the price turns larger than its SMA or vice versa. This allows the user to buy in when the trend of the price turns into increasing trend, sell when the trend becomes a decreasing trend, and hold for any other time.
+The key feature of this application is the calculation of simple moving averages (SMA). SMA is the average of the prices of the x days before the current day with the x days being specified by the user based. By comparing the current day price with the SMA, one can understand if a datum is high, low, or equal compared with the SMA. The strategy is to buy a stock on the day when the price turns larger than its SMA or vice versa. This allows the user to buy in when the trend of the price turns into an increasing trend, sell when the trend becomes a decreasing trend, and hold for any other time.
 
 ## Guide
 How do we run your project? What should we do to see it in action? - Note this isn't installing, this is actual use of the project.. If it is a website, you can point towards the gui, use screenshots, etc talking about features. 
 
+The program consists of three .py files. stock_analysis_app is the file that the user interacts with. Open the file and run it. The program will ask what the user wants to do. 
+```
+Welcome to the stock analysis app.
+What would you like to do? (Enter help for help)help
+You have the following command options:
+    analyze: program will help you analyze a stock
+    help: print this help message
+    exit: exit the program
+What would you like to do? (Enter help for help)
+```
 
 ## Installation Instructions
 If we wanted to run this project locally, what would we need to do?  If we need to get API key's include that information, and also command line startup commands to execute the project. If you have a lot of dependencies, you can also include a requirements.txt file, but make sure to include that we need to run `pip install -r requirements.txt` or something similar.
