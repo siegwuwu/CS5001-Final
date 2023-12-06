@@ -1,18 +1,19 @@
 # Final Project Report
 
-* Student Name:
-* Github Username:
-* Semester:
-* Course:
+* Student Name: Chen Wu
+* Github Username: siegwuwu
+* Semester: 23Fall
+* Course: CS5001
 
 
 
 ## Description 
-General overview of the project, what you did, why you did it, etc. 
-
+The final project focuses on building a stock analysis application. It uses the concept of moving averages to guide the trading strategy of the current day (as the data we use is the daily price). The selection of this topic results from a combination of personal trading experience as well as interest in the application of computer science in the finance field.
 
 ## Key Features
 Highlight some key features of this project that you want to show off/talk about/focus on. 
+
+The key feature of this application is the calculation of simple moving average (SMA). SMA is the average of the prices of the x days before the current day with the x days being specified by the user based. By comparing the current day price with the SMA, one can understand if a datum is high, low, or equal compared with the SMA. The strategy is to buy a stock on the day when the price turns larger than its SMA or vice versa. This allows the user to buy in when the trend of the price turns into increasing trend, sell when the trend becomes a decreasing trend, and hold for any other time.
 
 ## Guide
 How do we run your project? What should we do to see it in action? - Note this isn't installing, this is actual use of the project.. If it is a website, you can point towards the gui, use screenshots, etc talking about features. 
