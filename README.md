@@ -112,10 +112,10 @@ Date,Close,Strategy
 2023-03-01,20259.800781,hold
 What would you like to do? (Enter help for help):
 ```
-
+At the end, the program will ask what further action to take. The user can exit the program as the analysis process is finished.
 
 ## Installation Instructions
-If we wanted to run this project locally, what would we need to do?  If we need to get API key's include that information, and also command line startup commands to execute the project. If you have a lot of dependencies, you can also include a requirements.txt file, but make sure to include that we need to run `pip install -r requirements.txt` or something similar.
+Put the three .py files under the same folder, and the stock_analysis_app will be able to be run.
 
 ## Code Review
 Go over key aspects of code in this section. Both link to the file, include snippets in this report (make sure to use the [coding blocks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)).  Grading wise, we are looking for that you understand your code and what you did. 
