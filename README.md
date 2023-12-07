@@ -11,13 +11,9 @@
 The final project focuses on building a stock analysis application. It uses the concept of moving averages to guide the trading strategy of the current day (as the data we use is the daily price). The selection of this topic results from a combination of personal trading experience as well as interest in the application of computer science in the finance field.
 
 ## Key Features
-Highlight some key features of this project that you want to show off/talk about/focus on. 
-
 The key feature of this application is the calculation of simple moving averages (SMA). SMA is the average of the prices of the x days before the current day with the x days being specified by the user based. By comparing the current day price with the SMA, one can understand if a datum is high, low, or equal compared with the SMA. The strategy is to buy a stock on the day when the price turns larger than its SMA or vice versa. This allows the user to buy in when the trend of the price turns into an increasing trend, sell when the trend becomes a decreasing trend, and hold for any other time.
 
 ## Guide
-How do we run your project? What should we do to see it in action? - Note this isn't installing, this is actual use of the project.. If it is a website, you can point towards the gui, use screenshots, etc talking about features. 
-
 The program consists of three .py files. stock_analysis_app is the file that the user interacts with. Open the file and run it. The program will ask what the user wants to do. From the help message, there are 'analyze', 'help', and 'exit' commands available. 
 ```
 Welcome to the stock analysis app.
@@ -78,8 +74,6 @@ At the end, the program will ask what further action to take. The user can exit 
 Place the three .py files under the same folder, and running the stock_analysis_app.py will start the program.
 
 ## Code Review
-Go over key aspects of code in this section. Both link to the file, include snippets in this report (make sure to use the [coding blocks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)).  Grading wise, we are looking for that you understand your code and what you did. 
-
 Starting with the stock_analysis_app.py, the file first imports the functions from calculation.py and process_data.py. The strings to be used later are also assigned to global variables.
 
 ```python
@@ -445,14 +439,11 @@ def compare_MA(price_data: list, MA_data: list):
 ```
 
 ### Major Challenges
-Key aspects could include pieces that your struggled on and/or pieces that you are proud of and want to show off.
 The first challenge is to figure out the logic of using the moving average and reflecting it in the code. This part is primarily related to the calculation.py file. The strategy to buy or sell when there is a change in trend resulted from the trading strategy described in books I have read. The strategy was realized in the form of code through the help of a flow chart.
 
 Meanwhile, there was extensive use of lists in the entire program. There are also required formats for the lists. And the output of one function often feeds into another function. Therefore, all functions are tested to make sure the outputs are what are expected.
 
 ## Example Runs
-Explain how you documented running the project, and what we need to look for in your repository (text output from the project, small videos, links to videos on youtube of you running it, etc)
-
 The run of the project all happens in the development environment (idle is used in this case) and can be easily documented by either saving it as a file or copying it as text. Below is a sample run of the program. The file used is the S&P/TSX data from 2022-11-23 to 2023-11-22 (https://finance.yahoo.com/quote/%5EGSPC/history?period1=1669075200&period2=1700611200&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true).
 
 ```
@@ -490,8 +481,6 @@ Thank you for using the app
 ```
 
 ## Testing
-How did you test your code? What did you do to make sure your code was correct? If you wrote unit tests, you can link to them here. If you did run tests, make sure you document them as text files, and include them in your submission. 
-
 The functions that require input from the user are tested by calling the functions. The test results are included as .txt files. For the other functions, tests were implemented in the main function. These functions are given parameters and are considered passed if their outputs match the correct answers.
 
 In calculation.py, the compare_MA is tested in the main function.
@@ -571,12 +560,49 @@ Start date too old, start date defaulted to the oldest datum
 Passed tests: 2 ; Failed tests: 0
 ```
 
-## Missing Features / What's Next
-Focus on what you didn't get to do, and what you would do if you had more time, or things you would implement in the future.
+To test the correctness of the program output, a test run was implemented with the length of moving average set to 1, which means the moving average for one day is just the price of the previous day. From the outcome below, every day have moving average of the previous day except for the first daying have moving average of itself. The strategy suggested is also reflective of the trading logic. When a previous day has a price lower than the moving average and the current day price higher than the moving average, the program has suggested a buy, and vice versa. Therefore, the program is producing output as the design.
 
+```python
+==== RESTART: /Users/chenwu/Desktop/MSCS/CS5001/Final/stock_analysis_app.py ====
+Welcome to the stock analysis app.
+What would you like to do? (Enter help for help):analyze
+Please enter the file path of the stock price data:/Users/chenwu/Desktop/MSCS/CS5001/Final/S&P-TSX.csv
+Please enter the start date of analysis in the format of YYYY-MM-DD:2022-11-30
+Please enter the end date of analysis in the format of YYYY-MM-DD:2022-12-31
+Please enter the type of price to perform the analysis:close
+Please enter the number of days for the moving average:1
+Date,Close,MA,Strategy
+2022-11-30,20453.300781,20453.300781,hold
+2022-12-01,20525.500000,20453.300781,hold
+2022-12-02,20485.699219,20525.5,sell
+2022-12-05,20242.300781,20485.699219,hold
+2022-12-06,19990.199219,20242.300781,hold
+2022-12-07,19973.199219,19990.199219,hold
+2022-12-08,19969.199219,19973.199219,hold
+2022-12-09,19947.099609,19969.199219,hold
+2022-12-12,20019.699219,19947.099609,buy
+2022-12-13,20023.500000,20019.699219,hold
+2022-12-14,19891.699219,20023.5,sell
+2022-12-15,19600.599609,19891.699219,hold
+2022-12-16,19443.300781,19600.599609,hold
+2022-12-19,19200.800781,19443.300781,hold
+2022-12-20,19306.900391,19200.800781,buy
+2022-12-21,19571.099609,19306.900391,hold
+2022-12-22,19349.699219,19571.099609,sell
+2022-12-23,19506.699219,19349.699219,buy
+2022-12-28,19284.099609,19506.699219,sell
+2022-12-29,19485.900391,19284.099609,buy
+2022-12-30,19384.900391,19485.900391,sell
+What would you like to do? (Enter help for help):exit
+Thank you for using the app
+```
+
+## Missing Features / What's Next
 One major limitation of this program is that the data is not real-time. This limits this program's capability to only analyze historical data. If the user wants a more timely insight, they will need to obtain the file that contains the latest data and run the program daily. With the potential use of API for real-time price data, the program can become automatic with updates on the strategy daily.
 
 Additionally, the program currently prints the result to the screen, which is intended for humans. If automatic trading is expected, the program can be modified to return an output or write to a file.
 
+It would also be useful if the program could calculate the return by following the strategy it suggested to help the user make better decisions.
+
 ## Final Reflection
-Write at least a paragraph about your experience in this course. What did you learn? What do you need to do to learn more? Key takeaways? etc.
+The experience in this course is positive. I learned various techniques and tools in programming such as loops, operators, data types, recursion, etc. More importantly, the course has taught me the way to program. This is the method to think about and divide a problem, the ability to find resources when I am stuck, and the mindset to design robust, effective, and user-friendly programs. I am also excited that I could use the tools to build my program in the final project. With the foundation built, I think the understanding of data structure and algorithms can help me go further in becoming an efficient computer scientist. I am also curious to see the various topics in computer science and believe continued learning is the best way to explore.
