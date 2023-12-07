@@ -1,0 +1,23 @@
+Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+==== RESTART: /Users/chenwu/Desktop/MSCS/CS5001/Final/stock_analysis_app.py ====
+Welcome to the stock analysis app.
+What would you like to do? (Enter help for help):exit
+Thank you for using the app
+>>> menu()
+What would you like to do? (Enter help for help):1
+You have the following command options:
+    analyze: program will help you analyze a stock
+    help: print this help message
+    exit: exit the program
+What would you like to do? (Enter help for help):e
+You have the following command options:
+    analyze: program will help you analyze a stock
+    help: print this help message
+    exit: exit the program
+What would you like to do? (Enter help for help):analyze
+'analyze'
+>>> menu()
+What would you like to do? (Enter help for help):exit
+'exit'

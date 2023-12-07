@@ -1,0 +1,13 @@
+Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+
+==== RESTART: /Users/chenwu/Desktop/MSCS/CS5001/Final/stock_analysis_app.py ====
+Welcome to the stock analysis app.
+What would you like to do? (Enter help for help):exit
+Thank you for using the app
+>>> get_date()
+Please enter the start date of analysis in the format of YYYY-MM-DD:123412321
+Please enter the start date of analysis in the format of YYYY-MM-DD:1234-12-34
+Please enter the end date of analysis in the format of YYYY-MM-DD:pasfafe
+Please enter the end date of analysis in the format of YYYY-MM-DD:1234-34-12
+['1234-12-34', '1234-34-12']
