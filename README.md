@@ -446,12 +446,14 @@ def compare_MA(price_data: list, MA_data: list):
 
 ### Major Challenges
 Key aspects could include pieces that your struggled on and/or pieces that you are proud of and want to show off.
+The first challenge is to figure out the logic of using the moving average and reflecting it in the code. This part is primarily related to the calculation.py file. The strategy to buy or sell when there is a change in trend resulted from the trading strategy described in books I have read. The strategy was realized in the form of code through the help of a flow chart.
 
+Meanwhile, there was extensive use of lists in the entire program. There are also required formats for the lists. And the output of one function often feeds into another function. Therefore, all functions are tested to make sure the outputs are what are expected.
 
 ## Example Runs
 Explain how you documented running the project, and what we need to look for in your repository (text output from the project, small videos, links to videos on youtube of you running it, etc)
 
-Below is a sample run of the program. The file used is the S&P/TSX data from 2022-11-23 to 2023-11-22.
+The run of the project all happens in the development environment (idle is used in this case) and can be easily documented by either saving it as a file or copying it as text. Below is a sample run of the program. The file used is the S&P/TSX data from 2022-11-23 to 2023-11-22 (https://finance.yahoo.com/quote/%5EGSPC/history?period1=1669075200&period2=1700611200&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true).
 
 ```
 Welcome to the stock analysis app.
@@ -494,7 +496,11 @@ How did you test your code? What did you do to make sure your code was correct? 
 
 
 ## Missing Features / What's Next
-Focus on what you didn't get to do, and what you would do if you had more time, or things you would implement in the future. 
+Focus on what you didn't get to do, and what you would do if you had more time, or things you would implement in the future.
+
+One major limitation of this program is that the data is not real-time. This limits this program's capability to only analyze historical data. If the user wants a more timely insight, they will need to obtain the file that contains the latest data and run the program daily. With the potential use of API for real-time price data, the program can become automatic with updates on the strategy daily.
+
+Additionally, the program currently prints the result to the screen, which is intended for humans. If automatic trading is expected, the program can be modified to return an output or write to a file.
 
 ## Final Reflection
 Write at least a paragraph about your experience in this course. What did you learn? What do you need to do to learn more? Key takeaways? etc.
