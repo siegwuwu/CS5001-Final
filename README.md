@@ -492,8 +492,84 @@ Thank you for using the app
 ## Testing
 How did you test your code? What did you do to make sure your code was correct? If you wrote unit tests, you can link to them here. If you did run tests, make sure you document them as text files, and include them in your submission. 
 
-> _Make it easy for us to know you *ran the project* and *tested the project* before you submitted this report!_
+The functions that require input from the user are tested by calling the functions. The test results are included as .txt files. For the other functions, tests were implemented in the main function. These functions are given parameters and are considered passed if their outputs match the correct answers.
 
+In calculation.py, the compare_MA is tested in the main function.
+
+```python
+def main() -> None:
+    """
+    Runs the stock analysis application.
+    """
+
+    test_passed = 0
+    test_failed = 0
+    
+    if compare_MA(['Date,Close', '1,2', '2,3', '3,4'], ['MA', '1', '3', '4']) == ['Date,Close,MA,Strategy', '1,2,1.0,hold', '2,3,3.0,hold', '3,4,4.0,hold']:
+        test_passed += 1
+    else:
+        test_failed += 1
+    ## Test when day 1, 2, 3 all have difference in close and MA of 0, all days should have strategy of hold
+
+    if compare_MA(['Date,Close', '1,2', '2,3', '3,4'], ['MA', '1', '4', '1']) == ['Date,Close,MA,Strategy', '1,2,1.0,hold', '2,3,4.0,sell', '3,4,1.0,buy']:
+        test_passed += 1
+    else:
+        test_failed += 1
+    ## This test should return sell for day 2 as the (price - MA) turns negative, and buy for day 3 as the (price - MA) turns positive
+    
+    print('Passed tests:', test_passed, '; Failed tests:', test_failed)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Result:
+
+```
+======== RESTART: /Users/chenwu/Desktop/MSCS/CS5001/Final/calculation.py =======
+Passed tests: 2 ; Failed tests: 0
+```
+
+It is the same for the date_range function in process_data.py.
+
+```python
+def main() -> None:
+    """
+    Runs the stock analysis application.
+    """
+
+    test_passed = 0
+    test_failed = 0
+    
+    if compare_MA(['Date,Close', '1,2', '2,3', '3,4'], ['MA', '1', '3', '4']) == ['Date,Close,MA,Strategy', '1,2,1.0,hold', '2,3,3.0,hold', '3,4,4.0,hold']:
+        test_passed += 1
+    else:
+        test_failed += 1
+    ## Test when day 1, 2, 3 all have difference in close and MA of 0, all days should have strategy of hold
+
+    if compare_MA(['Date,Close', '1,2', '2,3', '3,4'], ['MA', '1', '4', '1']) == ['Date,Close,MA,Strategy', '1,2,1.0,hold', '2,3,4.0,sell', '3,4,1.0,buy']:
+        test_passed += 1
+    else:
+        test_failed += 1
+    ## This test should return sell for day 2 as the (price - MA) turns negative, and buy for day 3 as the (price - MA) turns positive
+    
+    print('Passed tests:', test_passed, '; Failed tests:', test_failed)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Result:
+
+```
+======= RESTART: /Users/chenwu/Desktop/MSCS/CS5001/Final/process_data.py =======
+Start date too old, start date defaulted to the oldest datum
+End date too old, end date defaulted to the oldest datum
+Start date too old, start date defaulted to the oldest datum
+Passed tests: 2 ; Failed tests: 0
+```
 
 ## Missing Features / What's Next
 Focus on what you didn't get to do, and what you would do if you had more time, or things you would implement in the future.
