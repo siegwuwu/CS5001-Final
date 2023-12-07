@@ -451,6 +451,42 @@ Key aspects could include pieces that your struggled on and/or pieces that you a
 ## Example Runs
 Explain how you documented running the project, and what we need to look for in your repository (text output from the project, small videos, links to videos on youtube of you running it, etc)
 
+Below is a sample run of the program. The file used is the S&P/TSX data from 2022-11-23 to 2023-11-22.
+
+```
+Welcome to the stock analysis app.
+What would you like to do? (Enter help for help):analyze
+Please enter the file path of the stock price data:/Users/chenwu/Desktop/MSCS/CS5001/Final/S&P-TSX.csv
+Please enter the start date of analysis in the format of YYYY-MM-DD:2022-11-30
+Please enter the end date of analysis in the format of YYYY-MM-DD:2022-12-31
+Please enter the type of price to perform the analysis:close
+Please enter the number of days for the moving average:5
+Date,Close,MA,Strategy
+2022-11-30,20453.300781,20453.300781,hold
+2022-12-01,20525.500000,20453.300781,hold
+2022-12-02,20485.699219,20489.4003905,sell
+2022-12-05,20242.300781,20488.166666666668,hold
+2022-12-06,19990.199219,20426.70019525,hold
+2022-12-07,19973.199219,20339.4,hold
+2022-12-08,19969.199219,20243.3796876,hold
+2022-12-09,19947.099609,20132.1195314,hold
+2022-12-12,20019.699219,20024.3996094,hold
+2022-12-13,20023.500000,19979.879297,buy
+2022-12-14,19891.699219,19986.5394532,sell
+2022-12-15,19600.599609,19970.2394532,hold
+2022-12-16,19443.300781,19896.5195312,hold
+2022-12-19,19200.800781,19795.7597656,hold
+2022-12-20,19306.900391,19631.980078,hold
+2022-12-21,19571.099609,19488.6601562,buy
+2022-12-22,19349.699219,19424.5402342,sell
+2022-12-23,19506.699219,19374.3601562,buy
+2022-12-28,19284.099609,19387.0398438,sell
+2022-12-29,19485.900391,19403.6996094,buy
+2022-12-30,19384.900391,19439.4996094,sell
+What would you like to do? (Enter help for help):exit
+Thank you for using the app
+```
+
 ## Testing
 How did you test your code? What did you do to make sure your code was correct? If you wrote unit tests, you can link to them here. If you did run tests, make sure you document them as text files, and include them in your submission. 
 
