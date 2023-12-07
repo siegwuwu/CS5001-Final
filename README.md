@@ -80,7 +80,23 @@ Place the three .py files under the same folder, and running the stock_analysis_
 ## Code Review
 Go over key aspects of code in this section. Both link to the file, include snippets in this report (make sure to use the [coding blocks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)).  Grading wise, we are looking for that you understand your code and what you did. 
 
-Starting with the stock_analysis_app.py, 
+Starting with the stock_analysis_app.py, the file first imports the functions from calculation.py and process_data.py. The strings to be used later are also assigned to global variables.
+
+```python
+from calculation import calculate_MA, compare_MA
+from process_data import date_range, calc_price
+## Import the functions form the other two files
+
+_WELCOME_MESSAGE = """Welcome to the stock analysis app."""
+_PROMPT = """What would you like to do? (Enter help for help):"""
+_HELP_MESSAGE = """
+You have the following command options:
+    analyze: program will help you analyze a stock
+    help: print this help message
+    exit: exit the program
+""".strip()
+_GOODBYE_MESSAGE = """Thank you for using the app"""
+```
 
 ### Major Challenges
 Key aspects could include pieces that your struggled on and/or pieces that you are proud of and want to show off.
