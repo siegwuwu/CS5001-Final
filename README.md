@@ -36,9 +36,9 @@ Date,Open,High,Low,Close,Adj Close,Volume
 2022-11-24,20309.199219,20386.699219,20309.199219,20344.099609,20344.099609,88111700
 2022-11-25,20348.900391,20446.300781,20342.199219,20383.800781,20383.800781,157063000
 ```
-The first line is the header separated by commas. The 'Date' column and at least one price category in the columns beside it are required. The data point in each line should start with the date in the form of YYYY-MM-DD. 
+The first line is the header separated by commas. The 'Date' column and at least one type of price in the columns beside it are required. The data point in each line should start with the date in the form of YYYY-MM-DD. 
 
-The program will prompt the user to enter the start and end date of the analysis, the price category to run the analysis on, and the number of days of the SMA.
+The program will then prompt the user to enter the start and end date of the analysis, the type of price to run the analysis on (typically, 'Close' is used for SMA analysis), and the number of days of the SMA.
 
 ```
 Please enter the start date of analysis in the format of YYYY-MM-DD:2022-12-01
@@ -46,7 +46,7 @@ Please enter the end date of analysis in the format of YYYY-MM-DD:2023-03-01
 Please enter the type of price to perform the analysis:close
 Please enter the number of days for the moving average:4
 ```
-Upon entering all the information, the program will generate the strategy for each day based on the input. Typically, 'Close' is used for SMA analysis.
+Upon entering all the information, the program will generate the strategy for each day based on the input. 
 ```
 Date,Close,Strategy
 2022-12-01,20525.500000,hold
@@ -115,10 +115,12 @@ What would you like to do? (Enter help for help):
 At the end, the program will ask what further action to take. The user can exit the program as the analysis process is finished.
 
 ## Installation Instructions
-Put the three .py files under the same folder, and the stock_analysis_app will be able to be run.
+Place the three .py files under the same folder, and running the stock_analysis_app.py will start the program.
 
 ## Code Review
 Go over key aspects of code in this section. Both link to the file, include snippets in this report (make sure to use the [coding blocks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)).  Grading wise, we are looking for that you understand your code and what you did. 
+
+Starting with the stock_analysis_app.py, 
 
 ### Major Challenges
 Key aspects could include pieces that your struggled on and/or pieces that you are proud of and want to show off.
